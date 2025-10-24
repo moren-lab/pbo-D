@@ -2,7 +2,11 @@
 class luaslingkaran{
 
     public const phi = 3.14;
-       public int $jari;
+     public int $jari;
+     public function __construct($isijari = 1){
+        $this ->jari =$isijari;
+
+     }
         public function tampil($nama='ban'){
          $rumus = luaslingkaran:: phi * $this ->jari * $this->jari;
          echo "lingkaran {$nama} hasilnya adalah {$rumus}";   
@@ -13,9 +17,14 @@ class luaslingkaran{
         echo "<br/>";
         echo "ini dari static";
     }
+    public function __destruct(){
+        echo "<br/>";
+        echo "next time";
+    }
 }
     
-$lingkaran = new luaslingkaran();
-$lingkaran -> jari =7;
+$lingkaran = new luaslingkaran(7);
 $lingkaran->tampil('roda');
 luaslingkaran::testing();
+
+
